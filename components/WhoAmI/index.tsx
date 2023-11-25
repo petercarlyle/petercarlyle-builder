@@ -1,3 +1,4 @@
+'use client';
 export default function WhoAmI({ props }: any) {
   return (
     <>
@@ -13,10 +14,10 @@ export default function WhoAmI({ props }: any) {
                   <div className='about-desc'>
                     <h2 className='colorlib-heading'>Who Am I?</h2>
                     <p>
-                      <strong>Hi I'm Peter Carlyle</strong> I have worked with
-                      some of the world’s largest brands in the local corner
-                      shop. Binging web and software solutions that are right
-                      for each.{' '}
+                      <strong>Hi I&apost;m Peter Carlyle</strong> I have worked
+                      with some of the world’s largest brands in the local
+                      corner shop. Binging web and software solutions that are
+                      right for each.{' '}
                     </p>
                   </div>
                 </div>

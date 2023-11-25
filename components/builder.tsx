@@ -9,7 +9,7 @@ interface BuilderPageProps {
 }
 
 // Replace with your Public API Key
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
+builder.init(process?.env?.NEXT_PUBLIC_BUILDER_API_KEY || '');
 
 export function RenderBuilderContent({ content, model }: BuilderPageProps) {
   // Call the useIsPreviewing hook to determine if

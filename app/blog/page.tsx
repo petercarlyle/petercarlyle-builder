@@ -2,7 +2,8 @@ import React from 'react';
 import { builder } from '@builder.io/sdk';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-
+import { jsx, css } from '@emotion/core';
+import Image from 'next/image';
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
 
@@ -28,23 +29,37 @@ export default async function Blog(props: PageProps) {
     offset: (pageNumber - 1) * ARTICLES_PER_PAGE,
   });
 
+  // @ts-ignore
   return (
     <div>
       <Navigation />
       <h1>Blog</h1>
 
       <div>
-        {articles.map((item) => (
-          <Link href={`/blog/${item.data.handle}`}>
-            <div css={{ overflow: 'hidden', width: 300 }}>
-              <div css={{ width: 300, height: 200, display: 'block' }}>
-                <img src={item.data.image} />
-              </div>
-              {item.data.title}
-              {item.data.description}
-            </div>
-          </Link>
-        ))}
+        {articles.length === 0 ? (
+          <div>No articles found</div>
+        ) : (
+          <>
+            {articles.map((item, index) => (
+              <Link
+                href={`/blog/${item?.data?.handle}`}
+                key={index}
+                className={'w-[300px] overflow-hidden'}
+              >
+                <Image
+                  src={item?.data?.image}
+                  height={300}
+                  width={200}
+                  className={'object-cover'}
+                  alt={item?.data?.title}
+                />
+
+                {item?.data?.title}
+                {item?.data?.description}
+              </Link>
+            ))}
+          </>
+        )}
         <div css={{ padding: 20, width: 300, margin: 'auto', display: 'flex' }}>
           {pageNumber > 1 && (
             <a href={`/blog/page/${pageNumber - 1}`}>‹ Previous page</a>

@@ -2,6 +2,7 @@ import React from 'react';
 import { builder } from '@builder.io/sdk';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import Image from 'next/image';
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
@@ -33,14 +34,18 @@ export default async function Projects(props: PageProps) {
       <Navigation />
       <h1>Projects</h1>
 
-      {articles.map((item) => (
-        <Link href={`/projects/${item.data.handle}`}>
-          <div css={{ overflow: 'hidden', width: 300 }}>
-            <div css={{ width: 300, height: 200, display: 'block' }}>
-              <img src={item.data.image} />
-            </div>
-            {item.data.title}
-            {item.data.description}
+      {articles.map((item, index) => (
+        <Link href={`/projects/${item?.data?.handle}`} key={index}>
+          <div className={'w-[300px] overflow-hidden'}>
+            <Image
+              src={item?.data?.image}
+              height={300}
+              width={200}
+              className={'object-cover'}
+              alt={item?.data?.title}
+            />
+            {item?.data?.title}
+            {item?.data?.description}
           </div>
         </Link>
       ))}

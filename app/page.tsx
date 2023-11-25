@@ -7,13 +7,7 @@ import Navigation from '@/components/Navigation';
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
 
-interface PageProps {
-  params: {
-    page: string[];
-  };
-}
-
-export default async function Page(props: PageProps) {
+export default async function Page() {
   const homepageContent = await builder
     .get('homepage', {
       prerender: false,

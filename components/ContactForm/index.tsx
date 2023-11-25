@@ -4,10 +4,9 @@ import {
   PhoneIcon,
   HomeModernIcon,
 } from '@heroicons/react/24/outline';
-import { Simulate } from 'react-dom/test-utils';
-import submit = Simulate.submit;
+
 import { useState } from 'react';
-export default function ContactForm() {
+export default function ContactForm({ props }: any) {
   const [inputs, setInputs] = useState({
     FirstName: '',
     LastName: '',
