@@ -17,24 +17,25 @@ export async function POST(req: any, res: any) {
       Date: ${new Date().toLocaleString()} - Peter Carlyle Website
       ------------------------------------------------------------------------\r\n
     `;
-    const smtpConfig = {
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    };
 
-    //@ts-ignore
-    const transporter = nodemailer.createTransport(smtpConfig as Transport);
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.CONTACT_EMAIL,
-      subject,
-      text,
-    });
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+      to: process.env.CONTACT_EMAIL, // Change to your recipient
+      from: process.env.CONTACT_EMAIL, // Change to your verified sender
+      subject: 'Peter Carlyle - Website Contact Form Submission',
+      text: text,
+      html: text.replace(/\r\n/g, '<br>'),
+    };
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log('Email sent');
+      })
+      .catch((error: any) => {
+        console.error(error);
+      });
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error(error);
