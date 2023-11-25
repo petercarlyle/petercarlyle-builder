@@ -6,9 +6,9 @@ import Link from 'next/link';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'My Projects', href: '/projects' },
+  // { name: 'My Projects', href: '/projects' },
   { name: 'About Me', href: '/about' },
-  { name: 'Blog', href: '/blog' },
+  // { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -45,9 +45,12 @@ export default function Navigation() {
           </button>
         </div>
         <div className='hidden lg:flex'>
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
+          <Link
+            href='/PeterCarlyleCV2023-DEV.pdf'
+            className='text-sm font-semibold leading-6 text-gray-900'
+          >
             Download my CV <span aria-hidden='true'>&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -83,7 +86,7 @@ export default function Navigation() {
               </div>
               <div className='py-6'>
                 <Link
-                  href='#'
+                  href='/PeterCarlyleCV2023-DEV.pdf'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   Download my CV<span aria-hidden='true'>&rarr;</span>
