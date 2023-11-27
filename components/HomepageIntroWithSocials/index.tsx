@@ -6,7 +6,17 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from '@/components/SocialIcons';
-export default function PageIntroParagraphWithHeading(props: any) {
+
+interface props {
+  title: string;
+  paragraph: string;
+  facebook: string;
+  twitter: string;
+  youtube: string;
+  linkedin: string;
+  github: string;
+}
+export default function PageIntroParagraphWithHeading(props: props) {
   return (
     <>
       <div className='max-w-2xl'>
@@ -18,24 +28,24 @@ export default function PageIntroParagraphWithHeading(props: any) {
         </p>
         <div className='mt-6 flex gap-6'>
           <SocialLink
-            href='https://twitter.com'
+            href={`https://twitter.com${props.twitter}`}
             aria-label='Follow on Twitter'
             icon={TwitterIcon}
           />
 
           <SocialLink
-            href='https://instagram.com'
+            href={`https://youtube.com/${props.youtube}`}
             aria-label='Check out my youtube channel'
             icon={YouTubeIcon}
           />
 
           <SocialLink
-            href='https://github.com'
+            href={`https://github.com${props.github}`}
             aria-label='Follow on GitHub'
             icon={GitHubIcon}
           />
           <SocialLink
-            href='https://linkedin.com'
+            href={`https://linkedin.com${props.linkedin}`}
             aria-label='Follow on LinkedIn'
             icon={LinkedInIcon}
           />
