@@ -15,6 +15,12 @@ Builder.registerComponent(WhoAmI, {
 
 Builder.registerComponent(ContactForm, {
   name: 'Contact Form',
+  inputs: [
+    { name: 'Text', type: 'longText', description: 'Why Contact Me' },
+    { name: 'Location', type: 'text', description: 'City, County' },
+    { name: 'Phone', type: 'text', description: 'Phone Number' },
+    { name: 'Email', type: 'text', description: 'Email' },
+  ],
   image:
     'https://tabler-icons.io/static/tabler-icons/icons-png/address-book.png',
 });

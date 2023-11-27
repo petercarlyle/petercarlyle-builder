@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { useState } from 'react';
-export default function ContactForm({ props }: any) {
+export default function ContactForm(props: any) {
   const [inputs, setInputs] = useState({
     FirstName: '',
     LastName: '',
@@ -76,9 +76,7 @@ export default function ContactForm({ props }: any) {
               Get in touch
             </h2>
             <p className='mt-6 text-lg leading-8 text-gray-600'>
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci
-              molestie a eu arcu. Sed ut tincidunt integer elementum id sem.
-              Arcu sed malesuada et magna.
+              {props?.Text}
             </p>
             <dl className='mt-10 space-y-4 text-base leading-7 text-gray-600'>
               <div className='flex gap-x-4'>
@@ -89,7 +87,7 @@ export default function ContactForm({ props }: any) {
                     aria-hidden='true'
                   />
                 </dt>
-                <dd>Edinburgh</dd>
+                <dd>{props?.Location}</dd>
               </div>
               <div className='flex gap-x-4'>
                 <dt className='flex-none'>
@@ -102,9 +100,9 @@ export default function ContactForm({ props }: any) {
                 <dd>
                   <a
                     className='hover:text-gray-900'
-                    href='tel:+44 (0) 7890047237'
+                    href={`tel:${props?.Phone}`}
                   >
-                    +44 (0) 7890047237
+                    {props?.Phone}
                   </a>
                 </dd>
               </div>
@@ -119,9 +117,9 @@ export default function ContactForm({ props }: any) {
                 <dd>
                   <a
                     className='hover:text-gray-900'
-                    href='mailto:hello@petercarlyle.co.uk'
+                    href={`mailto:${props?.Email}`}
                   >
-                    hello@example.com
+                    {props?.Email}
                   </a>
                 </dd>
               </div>
