@@ -31,7 +31,7 @@ export default async function Page(props: PageProps) {
       <div className={'h-screen'}>
         {/* eslint-disable-next-line react/jsx-no-undef */}
         <Container className='mt-9'>
-          <RenderBuilderContent model='homepage' content={content} />
+          <RenderBuilderContent model='page' content={content} />
         </Container>
       </div>
     </>

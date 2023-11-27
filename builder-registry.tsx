@@ -3,6 +3,7 @@ import WhoAmI from '@/components/WhoAmI';
 import ContactForm from '@/components/ContactForm';
 import HomepageIntroWithSocials from '@/components/HomepageIntroWithSocials';
 import ResumeComponent from '@/components/ResumeComponent';
+import AboutPageContainer from '@/components/AboutPageContainer';
 
 Builder.registerComponent(WhoAmI, {
   name: 'Who Am I',
@@ -41,6 +42,41 @@ Builder.registerComponent(ResumeComponent, {
       type: 'file',
       required: true,
       helperText: 'Upload your CV in PDF format',
+    },
+  ],
+});
+
+Builder.registerComponent(AboutPageContainer, {
+  name: 'About Page Container',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
+  inputs: [
+    {
+      name: 'portrateImage',
+      friendlyName: 'Portrate Image',
+      type: 'file',
+      required: true,
+      helperText: 'Upload your CV in PDF format',
+    },
+    {
+      name: 'altText',
+      friendlyName: 'Alt Text',
+      type: 'text',
+      required: true,
+      helperText: 'Alt Text',
+    },
+    {
+      name: 'Title',
+      friendlyName: 'Title',
+      type: 'text',
+      required: true,
+      helperText: 'Title',
+    },
+    {
+      name: 'text',
+      friendlyName: 'Text',
+      type: 'richText',
+      required: true,
+      helperText: 'Text',
     },
   ],
 });
