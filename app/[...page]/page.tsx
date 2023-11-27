@@ -1,9 +1,8 @@
+import React from 'react';
 import { builder } from '@builder.io/sdk';
 import { RenderBuilderContent } from '@/components/builder';
 import { metadata } from '@/app/layout';
-import React from 'react';
 import { Container } from '@/components/Container';
-
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
 
@@ -27,15 +26,14 @@ export default async function Page(props: PageProps) {
     // Convert the result to a promise
     .toPromise();
 
-  metadata.title =
-    content?.data?.title + ' - Peter Carlyle' ||
-    'Peter Carlyle - Software Developer';
-  metadata.description = content?.data.description;
   return (
     <>
-      <Container className='mt-9'>
-        <RenderBuilderContent model='page' content={content} />
-      </Container>
+      <div className={'h-screen'}>
+        {/* eslint-disable-next-line react/jsx-no-undef */}
+        <Container className='mt-9'>
+          <RenderBuilderContent model='homepage' content={content} />
+        </Container>
+      </div>
     </>
   );
 }
