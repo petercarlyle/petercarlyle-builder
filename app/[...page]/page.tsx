@@ -2,7 +2,7 @@ import { builder } from '@builder.io/sdk';
 import { RenderBuilderContent } from '@/components/builder';
 import { metadata } from '@/app/layout';
 import React from 'react';
-import Navigation from '@/components/Navigation';
+import { Container } from '@/components/Container';
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
@@ -33,12 +33,9 @@ export default async function Page(props: PageProps) {
   metadata.description = content?.data.description;
   return (
     <>
-      {/* Render the Builder page */}
-      <div className={'h-screen !bg-white'}>
-        <Navigation />
-        {JSON.stringify(content.data.title)}
+      <Container className='mt-9'>
         <RenderBuilderContent model='page' content={content} />
-      </div>
+      </Container>
     </>
   );
 }

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 export type Role = {
-  company: string;
-  title: string;
+  companyName: string;
+  jobTitle: string;
   start: string | { label: string; dateTime: string };
   end: string | { label: string; dateTime: string };
   logo?: string;
