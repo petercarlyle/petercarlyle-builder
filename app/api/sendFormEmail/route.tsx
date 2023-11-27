@@ -40,6 +40,25 @@ export async function POST(req: any, res: any) {
       console.error(error);
     }
 
+    const smtpConfig = {
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    };
+
+    //@ts-ignore
+    const transporter = nodemailer.createTransport(smtpConfig as Transport);
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.CONTACT_EMAIL,
+      subject,
+      text,
+    });
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error(error);
