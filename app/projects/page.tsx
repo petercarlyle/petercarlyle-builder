@@ -83,7 +83,7 @@ export default async function Projects(props: PageProps) {
                   </Card.Link>
                 </h2>
                 <Card.Description>
-                  {item.data.shortDescription}
+                  {item?.data?.shortDescription}
                 </Card.Description>
                 <p className='relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200'>
                   <LinkIcon className='h-6 w-6 flex-none' />
