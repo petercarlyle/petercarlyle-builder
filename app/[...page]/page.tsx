@@ -26,13 +26,17 @@ export default async function Page(props: PageProps) {
     })
     // Convert the result to a promise
     .toPromise();
-  metadata.title = content?.data.title;
+
+  metadata.title =
+    content?.data?.title + ' - Peter Carlyle' ||
+    'Peter Carlyle - Software Developer';
   metadata.description = content?.data.description;
   return (
     <>
       {/* Render the Builder page */}
       <div className={'h-screen !bg-white'}>
         <Navigation />
+        {JSON.stringify(content.data.title)}
         <RenderBuilderContent model='page' content={content} />
       </div>
     </>
