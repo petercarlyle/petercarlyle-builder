@@ -20,7 +20,7 @@ export default async function Page() {
   return (
     <>
       {/* Render the Builder page */}
-      <div className={'h-screen bg-white'}>
+      <div className={'h-screen'}>
         <Navigation />
 
         <RenderBuilderContent model='homepage' content={homepageContent} />
