@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../../globals.css';
-import Navigation from '@/components/Navigation';
 import React from 'react';
+import { Layout } from '@/components/Layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html lang='en' className='h-full antialiased' suppressHydrationWarning>
+      <body className='flex h-full bg-zinc-50 dark:bg-black'>
+        <div className='flex w-full'>
+          <Layout>{children}</Layout>
+        </div>
+      </body>
     </html>
   );
 }

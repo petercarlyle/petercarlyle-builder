@@ -1,7 +1,7 @@
 import React from 'react';
 import { builder } from '@builder.io/sdk';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
+
 import Image from 'next/image';
 
 // Replace with your Public API Key
@@ -31,7 +31,6 @@ export default async function Projects(props: PageProps) {
 
   return (
     <div className={'h-screen !bg-white'}>
-      <Navigation />
       <h1>Projects</h1>
 
       {articles.map((item, index) => (

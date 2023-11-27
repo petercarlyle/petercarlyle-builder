@@ -1,7 +1,7 @@
 import React from 'react';
 import { builder } from '@builder.io/sdk';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
+
 import { jsx, css } from '@emotion/core';
 import Image from 'next/image';
 // Replace with your Public API Key
@@ -32,7 +32,6 @@ export default async function Blog(props: PageProps) {
   // @ts-ignore
   return (
     <div>
-      <Navigation />
       <h1>Blog</h1>
 
       <div>

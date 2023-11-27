@@ -3,7 +3,6 @@ import { builder } from '@builder.io/sdk';
 import { RenderBuilderContent } from '@/components/builder';
 import Head from 'next/head';
 import { metadata } from '@/app/layout';
-import Navigation from '@/components/Navigation';
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
@@ -39,7 +38,6 @@ export default async function Project(props: PageProps) {
         <meta name='og:image' content={content?.data.image} />
       </Head>
       <div className={'bg-white'}>
-        <Navigation />
         <div>{content?.data.title}</div>
         <div>{content?.data.headline}</div>
         <div>{content?.data.blurb}</div>
