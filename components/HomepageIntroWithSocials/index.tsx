@@ -6,7 +6,17 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from '@/components/SocialIcons';
-export default function PageIntroParagraphWithHeading(props: any) {
+
+interface props {
+  title: string;
+  paragraph: string;
+  facebook: string;
+  twitter: string;
+  youtube: string;
+  linkedin: string;
+  github: string;
+}
+export default function PageIntroParagraphWithHeading(props: props) {
   return (
     <>
       <div className='max-w-2xl'>

@@ -1,7 +1,7 @@
 import { Builder } from '@builder.io/react';
 import WhoAmI from '@/components/WhoAmI';
 import ContactForm from '@/components/ContactForm';
-import HomepageIntroWithSocials from 'components/HomepageIntroWithSocials';
+import HomepageIntroWithSocials from '@/components/HomepageIntroWithSocials';
 import ResumeComponent from '@/components/ResumeComponent';
 
 Builder.registerComponent(WhoAmI, {
