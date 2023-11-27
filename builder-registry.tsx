@@ -4,6 +4,8 @@ import ContactForm from '@/components/ContactForm';
 import HomepageIntroWithSocials from '@/components/HomepageIntroWithSocials';
 import ResumeComponent from '@/components/ResumeComponent';
 import AboutPageContainer from '@/components/AboutPageContainer';
+import PageHeader from '@/components/PageHeader';
+import ToolSection from '@/components/ToolSection';
 
 Builder.registerComponent(WhoAmI, {
   name: 'Who Am I',
@@ -83,6 +85,52 @@ Builder.registerComponent(AboutPageContainer, {
       type: 'richText',
       required: true,
       helperText: 'Text',
+    },
+  ],
+});
+
+Builder.registerComponent(PageHeader, {
+  name: 'Page Header',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
+  inputs: [
+    {
+      name: 'title',
+      friendlyName: 'Title',
+      type: 'text',
+      required: true,
+      helperText: 'Title',
+    },
+    {
+      name: 'intro',
+      friendlyName: 'Text',
+      type: 'richText',
+      required: true,
+      helperText: 'Text',
+    },
+  ],
+});
+
+Builder.registerComponent(ToolSection, {
+  name: 'ToolSection',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
+  inputs: [
+    {
+      name: 'Title',
+      friendlyName: 'title',
+      type: 'text',
+      required: true,
+      helperText: 'Title of tool set as heading',
+    },
+    {
+      name: 'Tools',
+      friendlyName: 'List of Tools',
+      type: 'list',
+      required: true,
+      helperText: 'Tools List',
+      subFields: [
+        { name: 'title', type: 'text', required: true },
+        { name: 'description', type: 'richText', required: true },
+      ],
     },
   ],
 });
