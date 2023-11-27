@@ -27,14 +27,18 @@ export async function POST(req: any, res: any) {
       text: text,
       html: text.replace(/\r\n/g, '<br>'),
     };
-    sgMail
-      .send(msg)
-      .then(() => {
-        console.log('Email sent');
-      })
-      .catch((error: any) => {
-        console.error(error);
-      });
+    try {
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent');
+        })
+        .catch((error: any) => {
+          console.error(error);
+        });
+    } catch (error) {
+      console.error(error);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
