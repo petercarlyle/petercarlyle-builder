@@ -3,6 +3,7 @@ import { builder } from '@builder.io/sdk';
 import { RenderBuilderContent } from '@/components/builder';
 import Head from 'next/head';
 import { metadata } from '@/app/layout';
+import { Container } from '@/components/Container';
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY || '');
@@ -31,15 +32,11 @@ export default async function BlogArticle(props: PageProps) {
 
   return (
     <>
-      <Head>
-        {/* Render meta tags from custom field */}
-        <title>{content?.data.title}</title>
-        <meta name='description' content={content?.data.blurb} />
-        <meta name='og:image' content={content?.data.image} />
-      </Head>
-      <div>
-        {/* Render the Builder drag/droped content */}
-        <RenderBuilderContent content={content} model='blog-article' />
+      <div className={'h-screen'}>
+        {/* eslint-disable-next-line react/jsx-no-undef */}
+        <Container className='mt-9'>
+          <RenderBuilderContent model='blog-article' content={content} />
+        </Container>
       </div>
     </>
   );
