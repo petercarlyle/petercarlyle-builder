@@ -6,6 +6,10 @@ import ResumeComponent from '@/components/ResumeComponent';
 import AboutPageContainer from '@/components/AboutPageContainer';
 import PageHeader from '@/components/PageHeader';
 import ToolSection from '@/components/ToolSection';
+import ProjectScreenShots from '@/components/ProjectScreenShots';
+import ProjectTechnologies from '@/components/ProjectTechnologies';
+import ProjectDetailsGrid from '@/components/ProjectDetailsGrid';
+import ProjectHeader from '@/components/ProjectHeader';
 
 Builder.registerComponent(WhoAmI, {
   name: 'Who Am I',
@@ -133,4 +137,24 @@ Builder.registerComponent(ToolSection, {
       ],
     },
   ],
+});
+
+Builder.registerComponent(ProjectScreenShots, {
+  name: 'Project Screen Shots',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
+});
+
+Builder.registerComponent(ProjectTechnologies, {
+  name: 'Project Details Technologies',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
+});
+
+Builder.registerComponent(ProjectDetailsGrid, {
+  name: 'Project Details Grid',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
+});
+
+Builder.registerComponent(ProjectHeader, {
+  name: 'Project Header',
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/ghost-3.png',
 });
