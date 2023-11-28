@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Layout } from '@/components/Layout';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import React from 'react';
 export const metadata: Metadata = {
   title: 'Peter Carlyle Portfolio',
   description: 'a NEXT.js portfolio built with Builder.io',
