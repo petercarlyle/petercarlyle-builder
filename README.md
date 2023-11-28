@@ -25,6 +25,7 @@ Page model (Standard Builder.io page model)
 ### Section Models
 Homepage Model (Standard Builder.io home model)
 Project model 
+
 Blog model
 ### Data Model
 Technology
@@ -38,7 +39,7 @@ Install Dependencies
 npm install
 ```
 create .env.local file with the following variables
-```bash
+```
 BUILDER_API_KEY=
 NEXT_PUBLIC_BUILDER_API_KEY=
 SENDGRID_API_KEY=
@@ -52,9 +53,8 @@ NEXT_PUBLIC_GA_ID=
 then to run server locally
 
 ```bash
-
 npm run dev
 ```
 
 ## Deployment
-This site is deploted on push to main branch using Vercel and GitHub integration
+This site is Deployed on push to main branch using Vercel and GitHub integration
