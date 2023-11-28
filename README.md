@@ -47,6 +47,7 @@ EMAIL_PORT=
 EMAIL_USER=
 EMAIL_PASS=
 CONTACT_EMAIL=
+NEXT_PUBLIC_GA_ID=
 ```
 then to run server locally
 
