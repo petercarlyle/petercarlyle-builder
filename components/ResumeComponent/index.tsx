@@ -26,7 +26,7 @@ export default function ResumeComponent(props: any) {
         ))}
       </ol>
       <div
-        className='group m-5 mt-6 w-full rounded-2xl border border-zinc-700 p-4 text-center hover:bg-zinc-700'
+        className='group mb-1 mt-6  rounded-2xl border border-zinc-700 p-4  text-center hover:bg-zinc-700'
         onClick={() => window.open(props?.CV, '_blank')}
       >
         Download CV
